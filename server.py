@@ -7,8 +7,8 @@ app = Flask(__name__)
 def get_db_connection():
     conn = psycopg2.connect(host='dpg-cqp03clds78s73e1su3g-a.oregon-postgres.render.com',
                             database='salaf_filmes',
-                            user='vigamy',
-                            password='HRdL8wJCtAbJg4rYFL291x0yJqLGyEEO')
+                            user=os.getenv("db_user"),
+                            password=os.getenv("db_password"),)
     return conn
 
 
